@@ -8,6 +8,8 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
     preferIpAddress: true
     metadata-map:
       providing_paths: "/mypath/"
