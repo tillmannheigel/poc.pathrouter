@@ -9,6 +9,7 @@
         <module name="loadbalancer" />
         <module name="registry" />
         <module name="router" />
+        <module name="webapplication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="pathrouter" target="1.5" />
       <module name="registry" target="1.8" />
       <module name="router" target="1.8" />
+      <module name="webapplication" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
