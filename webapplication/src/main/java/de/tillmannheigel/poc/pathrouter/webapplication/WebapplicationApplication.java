@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebapplicationApplication {
 
 	@RequestMapping("/")
-	public void getPage(){
+	public String getPage() {
 		return "Moin";
 	}
 
