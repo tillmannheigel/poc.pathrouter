@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebapplicationApplication {
 
-    @GetMapping("/")
+    @GetMapping({ "/", "/mypath" })
     public String getHome() {
         return "Moin";
     }
