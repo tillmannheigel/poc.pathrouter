@@ -2,10 +2,20 @@ spring:
   application:
     name: router
 server:
-  port: 8180
+  port: 8762
 eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    preferIpAddress: true
+    register-with-eureka: true
+    fetch-registry: true
+zuul:
+  routes:
+    foos:
+      path: /mypath/**
+      url: http://localhost:8080/mypath
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

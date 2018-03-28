@@ -10,6 +10,5 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
-    preferIpAddress: true
     metadata-map:
       providing_paths: "/mypath/"
