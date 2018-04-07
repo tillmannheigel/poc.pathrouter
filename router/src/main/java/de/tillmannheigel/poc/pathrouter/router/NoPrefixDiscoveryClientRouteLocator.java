@@ -1,5 +1,6 @@
 package de.tillmannheigel.poc.pathrouter.router;
 
+import org.slf4j.Logger;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.zuul.filters.RefreshableRouteLocator;
@@ -10,6 +11,8 @@ import org.springframework.cloud.netflix.zuul.filters.discovery.SimpleServiceRou
 
 public class NoPrefixDiscoveryClientRouteLocator extends SimpleRouteLocator
         implements RefreshableRouteLocator {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(NoPrefixDiscoveryClientRouteLocator.class);
 
     private DiscoveryClient discovery;
 
@@ -40,6 +43,6 @@ public class NoPrefixDiscoveryClientRouteLocator extends SimpleRouteLocator
 
     @Override
     public void refresh() {
-        System.out.println("NoPrefixDiscoveryClientRouteLocator#refresh()");
+        log.info("NoPrefixDiscoveryClientRouteLocator#refresh()");
     }
 }
