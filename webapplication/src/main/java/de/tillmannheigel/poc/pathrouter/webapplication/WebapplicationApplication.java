@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebapplicationApplication {
 
+    @Expose
     @GetMapping({ "/", "/hallo" })
     public String getHome() {
         return "Moin";

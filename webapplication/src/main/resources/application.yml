@@ -10,8 +10,6 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
-    metadata-map:
-      provided_paths: "/,/hallo"
 management:
   endpoint:
     mappings:

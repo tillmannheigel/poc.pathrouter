@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.cloud:spring-cloud-gateway-core:2.0.0.BUILD-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180525.131915-2522.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180526.100529-2529.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180525.131915-2522-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180526.100529-2529-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180525.131915-2522-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.0.0.BUILD-SNAPSHOT/spring-cloud-gateway-core-2.0.0.BUILD-20180526.100529-2529-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

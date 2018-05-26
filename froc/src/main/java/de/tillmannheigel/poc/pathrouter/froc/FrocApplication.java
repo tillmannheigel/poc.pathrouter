@@ -12,6 +12,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 
+
 @EnableDiscoveryClient
 @SpringBootApplication
 public class FrocApplication {
@@ -27,7 +28,6 @@ public class FrocApplication {
 
     @Autowired
     private DiscoveryClient discoveryClient;
-
 
     @Bean
     public RouteLocator staticRoutes() {
@@ -56,6 +56,29 @@ public class FrocApplication {
 
         return routesBuilder.build();
     }
+
+   /* @Bean
+    public RouteLocator actuatorRoutes() {
+        RouteLocatorBuilder.Builder routesBuilder = routeLocatorBuilder.routes();
+        discoveryClient.getServices().stream()
+                .map(discoveryClient::getInstances)
+                .filter(instances -> !instances.isEmpty())
+                .map(instances -> instances.get(0))
+                .forEach(serviceInstance -> {
+                    Map<String, String> metadata = serviceInstance.getMetadata();
+                    URI uri = serviceInstance.getUri().resolve("/actuator/mappings");
+
+                    MappingsEndpoint.ApplicationMappings applicationMappings = new RestTemplate().getForObject(uri, MappingsEndpoint.ApplicationMappings.class);
+                    if (metadata.containsKey(FROC_ROUTES)) {
+                        String[] paths = metadata.get(FROC_ROUTES).split(",");
+                        for (String path : paths) {
+                            routesBuilder.route(r -> r.path(path).uri(serviceInstance.getUri().resolve(path)));
+                        }
+                    }
+                });
+
+        return routesBuilder.build();
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(FrocApplication.class, args);
