@@ -11,4 +11,12 @@ eureka:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
     metadata-map:
-      providing_paths: "/mypath/"
+      provided_paths: "/,/hallo"
+management:
+  endpoint:
+    mappings:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: mappings

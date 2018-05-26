@@ -14,7 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="froc" target="1.5" />
+      <module name="froc" target="1.8" />
       <module name="loadbalancer" target="1.8" />
       <module name="pathrouter" target="1.5" />
       <module name="registry" target="1.8" />
