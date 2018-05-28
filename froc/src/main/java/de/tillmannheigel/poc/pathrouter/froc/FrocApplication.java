@@ -19,7 +19,6 @@ public class FrocApplication {
 
 
     public static final String FROC_ROUTES = "provided_paths";
-    public static final String META = "/meta";
     @Value("${test.uri:http://httpbin.org/get}")
     String uri;
 
@@ -46,6 +45,7 @@ public class FrocApplication {
                 .map(instances -> instances.get(0))
                 .forEach(serviceInstance -> {
                     Map<String, String> metadata = serviceInstance.getMetadata();
+                    // Get all values where the values starts with FROC_ROUTES
                     if (metadata.containsKey(FROC_ROUTES)) {
                         String[] paths = metadata.get(FROC_ROUTES).split(",");
                         for (String path : paths) {
@@ -57,28 +57,6 @@ public class FrocApplication {
         return routesBuilder.build();
     }
 
-   /* @Bean
-    public RouteLocator actuatorRoutes() {
-        RouteLocatorBuilder.Builder routesBuilder = routeLocatorBuilder.routes();
-        discoveryClient.getServices().stream()
-                .map(discoveryClient::getInstances)
-                .filter(instances -> !instances.isEmpty())
-                .map(instances -> instances.get(0))
-                .forEach(serviceInstance -> {
-                    Map<String, String> metadata = serviceInstance.getMetadata();
-                    URI uri = serviceInstance.getUri().resolve("/actuator/mappings");
-
-                    MappingsEndpoint.ApplicationMappings applicationMappings = new RestTemplate().getForObject(uri, MappingsEndpoint.ApplicationMappings.class);
-                    if (metadata.containsKey(FROC_ROUTES)) {
-                        String[] paths = metadata.get(FROC_ROUTES).split(",");
-                        for (String path : paths) {
-                            routesBuilder.route(r -> r.path(path).uri(serviceInstance.getUri().resolve(path)));
-                        }
-                    }
-                });
-
-        return routesBuilder.build();
-    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(FrocApplication.class, args);
