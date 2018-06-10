@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import de.tillmannheigel.poc.pathrouter.webapplication.routesReporter.RequestMappingCollector;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.web.mappings.servlet.DispatcherServletMappingDescription;
 import org.springframework.boot.actuate.web.mappings.servlet.DispatcherServletMappingDetails;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.tillmannheigel.poc.pathrouter.webapplication.routesReporter.Route;
 
+@Slf4j
 @Component
 public class RestControllerRule implements Rule {
 
@@ -32,7 +34,7 @@ public class RestControllerRule implements Rule {
                 try {
                     clazz = Class.forName(handlerMethodClass);
                 } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                    log.warn("Could not find class", e);
                     continue;
                 }
                 if (clazz != null) {
