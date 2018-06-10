@@ -13,8 +13,6 @@
     <modules>
         <module>registry</module>
         <module>router</module>
-        <module>loadbalancer</module>
         <module>webapplication</module>
-        <module>admin</module>
     </modules>
 </project>
