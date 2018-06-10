@@ -1,4 +1,4 @@
-package de.tillmannheigel.poc.pathrouter.froc;
+package de.tillmannheigel.poc.pathrouter.router;
 
 import java.util.Map;
 
