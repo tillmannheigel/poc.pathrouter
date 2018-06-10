@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import de.tillmannheigel.poc.pathrouter.webapplication.routesReporter.RequestMappingCollector;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.web.mappings.servlet.DispatcherServletMappingDescription;
 import org.springframework.boot.actuate.web.mappings.servlet.DispatcherServletMappingDetails;
 import org.springframework.stereotype.Component;
@@ -17,10 +19,14 @@ import de.tillmannheigel.poc.pathrouter.webapplication.routesReporter.Route;
 @Slf4j
 public class ControllerRule implements Rule {
 
-    public List<Route> applyRule(List<DispatcherServletMappingDescription> servletMappingDescriptions) {
+    @Autowired
+    private RequestMappingCollector requestMappingCollector;
+
+    public List<Route> getRoutes() {
+        List<DispatcherServletMappingDescription> requestMappingDescriptions = requestMappingCollector.getRequestMappingDescriptions();
         List<Route> routes = new ArrayList<>();
 
-        for (DispatcherServletMappingDescription dispatcherServletMappingDescription : servletMappingDescriptions) {
+        for (DispatcherServletMappingDescription dispatcherServletMappingDescription : requestMappingDescriptions) {
             DispatcherServletMappingDetails details = dispatcherServletMappingDescription.getDetails();
             if (details != null) {
                 String handlerMethodClass = details.getHandlerMethod().getClassName();

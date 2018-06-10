@@ -20,15 +20,12 @@ public class DynamicRoutesReporter {
     @Autowired
     List<Rule> rules;
     @Autowired
-    private RequestMappingCollector requestMappingCollector;
-    @Autowired
     private RoutesPublisher routesPublisher;
 
     @PostConstruct
     public void init() {
-        List<DispatcherServletMappingDescription> requestMappingDescriptions = requestMappingCollector.getRequestMappingDescriptions();
         Set<Route> routes = rules.stream()
-                .flatMap(rule -> rule.applyRule(requestMappingDescriptions).stream())
+                .flatMap(rule -> rule.getRoutes().stream())
                 .collect(Collectors.toSet());
         try {
             routesPublisher.publish(routes);

@@ -7,5 +7,5 @@ import org.springframework.boot.actuate.web.mappings.servlet.DispatcherServletMa
 import de.tillmannheigel.poc.pathrouter.webapplication.routesReporter.Route;
 
 public interface Rule {
-    List<Route> applyRule(List<DispatcherServletMappingDescription> servletMappingDescriptions);
+    List<Route> getRoutes();
 }
