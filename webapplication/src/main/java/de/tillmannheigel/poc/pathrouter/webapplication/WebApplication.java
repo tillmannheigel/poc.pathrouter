@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-public class WebapplicationApplication {
+public class WebApplication {
 
     @Expose
     @GetMapping({ "/", "/hallo" })
@@ -20,6 +20,6 @@ public class WebapplicationApplication {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebapplicationApplication.class, args);
+		SpringApplication.run(WebApplication.class, args);
 	}
 }

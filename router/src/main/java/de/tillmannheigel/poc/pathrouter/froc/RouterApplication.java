@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FrocApplication {
+public class RouterApplication {
 
 
     public static final String FROC_ROUTES = "provided_paths";
@@ -59,6 +59,6 @@ public class FrocApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(FrocApplication.class, args);
+        SpringApplication.run(RouterApplication.class, args);
     }
 }

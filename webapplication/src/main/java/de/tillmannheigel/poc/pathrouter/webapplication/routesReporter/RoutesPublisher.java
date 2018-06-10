@@ -1,5 +1,6 @@
 package de.tillmannheigel.poc.pathrouter.webapplication.routesReporter;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,8 +22,9 @@ public class RoutesPublisher {
 
     public void publish(Set<Route> routesSet) throws JsonProcessingException {
         Map<String, String> map = applicationInfoManager.getInfo().getMetadata();
-        for (int i = 0; routesSet.iterator().hasNext(); i++) {
-            Route route = routesSet.iterator().next();
+        final Iterator<Route> iterator = routesSet.iterator();
+        for (int i = 0; iterator.hasNext(); i++) {
+            Route route = iterator.next();
             map.put(PROVIDED_PATH_PREFIX + i, OBJECT_MAPPER.writeValueAsString(route));
         }
     }

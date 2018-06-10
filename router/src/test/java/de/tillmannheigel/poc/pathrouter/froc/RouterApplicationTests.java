@@ -1,4 +1,4 @@
-package de.tillmannheigel.poc.pathrouter.webapplication;
+package de.tillmannheigel.poc.pathrouter.froc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class WebapplicationApplicationTests {
+public class RouterApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
 }
